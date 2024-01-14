@@ -31,6 +31,8 @@
         "systemeio/test-for-candidates": "^1.0"
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.5",
+        "fzaninotto/faker": "^1.5",
         "phpstan/phpstan": "^1.10",
         "squizlabs/php_codesniffer": "*",
         "symfony/maker-bundle": "^1.52",

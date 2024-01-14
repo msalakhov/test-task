@@ -16,3 +16,5 @@ create-migration:
 	docker-compose exec php-cli php bin/console make:migration
 migrate:
 	docker-compose exec php-cli php bin/console doctrine:migrations:migrate --no-interaction
+fixtures:
+	docker-compose exec php-cli php bin/console doctrine:fixtures:load --no-interaction -v
