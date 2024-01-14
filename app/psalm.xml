@@ -14,4 +14,11 @@
             <directory name="vendor" />
         </ignoreFiles>
     </projectFiles>
+    <issueHandlers>
+        <MissingConstructor>
+            <errorLevel type="suppress">
+                <directory name="src/Entity"/>
+            </errorLevel>
+        </MissingConstructor>
+    </issueHandlers>
 </psalm>

@@ -37,7 +37,7 @@ services:
     networks:
       - systemeio-net
   postgres:
-    image: postgres
+    image: postgres:15
     volumes:
       - systemeio-pgsql:/var/lib/postgresql/data
     environment:
