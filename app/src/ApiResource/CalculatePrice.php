@@ -7,6 +7,8 @@ use App\Dto\CalculatePriceDto;
 use App\Handler\CalculatePriceHandler;
 
 #[Post(
+    uriTemplate: '/calculate-price',
+    description: 'Calculate price',
     input: CalculatePriceDto::class,
     processor: CalculatePriceHandler::class
 )]
