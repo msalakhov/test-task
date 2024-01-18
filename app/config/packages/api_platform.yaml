@@ -21,3 +21,8 @@ api_platform:
     graphql:
         graphiql:
             enabled: false
+    exception_to_status:
+        # Validation exception
+        ApiPlatform\Validator\Exception\ValidationException: 400
+        # Payment exception
+        Exception: 400

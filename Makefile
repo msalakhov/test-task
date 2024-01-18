@@ -8,6 +8,7 @@ stan:
 psalm:
 	docker-compose exec php-cli vendor/bin/psalm
 
+refresh: drop-database create-database migrate fixtures
 drop-database:
 	docker-compose exec php-cli php bin/console doctrine:database:drop --if-exists --force --no-interaction
 create-database:

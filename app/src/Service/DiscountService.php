@@ -19,11 +19,11 @@ class DiscountService
         $discountAmount = $discount->getAmount();
 
         if ($discountType === DiscountType::PERCENT) {
-            return bcmul($price, (string) $discountAmount);
+            return bcmul($price, $discountAmount);
         }
 
         if ($discountType === DiscountType::FIXED) {
-            return bcdiv($price, (string) $discountAmount);
+            return bcdiv($price, $discountAmount);
         }
 
         throw new Exception('Unknown discount type');

@@ -8,6 +8,7 @@ use App\Handler\PurchaseHandler;
 
 #[Post(
     uriTemplate: '/purchase',
+    status: 200,
     description: 'Make purchase',
     input: PurchaseDto::class,
     processor: PurchaseHandler::class

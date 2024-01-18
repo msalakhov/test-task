@@ -19,22 +19,22 @@ class TaxFixtures extends Fixture
             [
                 'countryCode' => 'DE',
                 'mask' => 'DEXXXXXXXXX',
-                'amount' => 19,
+                'amount' => '19',
             ],
             [
                 'countryCode' => 'IT',
                 'mask' => 'ITXXXXXXXXXXX',
-                'amount' => 22,
+                'amount' => '22',
             ],
             [
                 'countryCode' => 'GR',
                 'mask' => 'GRXXXXXXXXX',
-                'amount' => 24,
+                'amount' => '24',
             ],
             [
                 'countryCode' => 'FR',
                 'mask' => 'FRYYXXXXXXXXX',
-                'amount' => 20,
+                'amount' => '20',
             ],
         ];
     }

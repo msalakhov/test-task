@@ -8,9 +8,10 @@ use App\Handler\CalculatePriceHandler;
 
 #[Post(
     uriTemplate: '/calculate-price',
+    status: 200,
     description: 'Calculate price',
     input: CalculatePriceDto::class,
-    processor: CalculatePriceHandler::class
+    processor: CalculatePriceHandler::class,
 )]
 class CalculatePrice
 {

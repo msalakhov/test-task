@@ -30,7 +30,7 @@ class DiscountFixtures extends Fixture
                     )
                 )
                 ->setDiscountType($faker->randomElement(DiscountType::LIST))
-                ->setAmount($faker->numberBetween(max: 90));
+                ->setAmount((string) $faker->numberBetween(min: 10, max: 90));
 
             print_r('generated coupon ' . $discount->getCode() . "\n");
 

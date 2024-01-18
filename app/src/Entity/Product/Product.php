@@ -18,7 +18,7 @@ class Product
     private string $name;
 
     #[ORM\Column(type: 'decimal', options: ['precision' => 8, 'scale' => 2])]
-    private int $price;
+    private string $price;
 
     public function getId(): ?int
     {
@@ -44,12 +44,12 @@ class Product
         return $this;
     }
 
-    public function getPrice(): int
+    public function getPrice(): string
     {
         return $this->price;
     }
 
-    public function setPrice(int $price): self
+    public function setPrice(string $price): self
     {
         $this->price = $price;
 

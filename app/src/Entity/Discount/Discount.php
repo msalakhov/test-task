@@ -24,7 +24,7 @@ class Discount
     private string $discountType;
 
     #[ORM\Column(type: 'decimal', options: ['precision' => 5, 'scale' => 2])]
-    private int $amount;
+    private string $amount;
 
     public function getId(): ?int
     {
@@ -62,12 +62,12 @@ class Discount
         return $this;
     }
 
-    public function getAmount(): int
+    public function getAmount(): string
     {
         return $this->amount;
     }
 
-    public function setAmount(int $amount): self
+    public function setAmount(string $amount): self
     {
         $this->amount = $amount;
 

@@ -16,15 +16,15 @@ class ProductFixtures extends Fixture
         return [
             [
                 'name' => 'Iphone',
-                'price' => 100,
+                'price' => '100',
             ],
             [
                 'name' => 'Наушники',
-                'price' => 20,
+                'price' => '20',
             ],
             [
                 'name' => 'Чехол',
-                'price' => 10,
+                'price' => '10',
             ],
         ];
     }
