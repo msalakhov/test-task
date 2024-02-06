@@ -9,9 +9,9 @@
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
 >
     <projectFiles>
-        <directory name="src" />
+        <directory name="src"/>
         <ignoreFiles>
-            <directory name="vendor" />
+            <directory name="vendor"/>
         </ignoreFiles>
     </projectFiles>
     <issueHandlers>
@@ -28,7 +28,24 @@
         <MixedArgument>
             <errorLevel type="suppress">
                 <directory name="src/DataFixtures"/>
+                <directory name="src/Handler"/>
             </errorLevel>
         </MixedArgument>
+        <MissingConstructor>
+            <errorLevel type="suppress">
+                <directory name="src/Entity"/>
+                <directory name="src/Dto"/>
+            </errorLevel>
+        </MissingConstructor>
+        <MoreSpecificImplementedParamType>
+            <errorLevel type="suppress">
+                <directory name="src/Handler"/>
+            </errorLevel>
+        </MoreSpecificImplementedParamType>
+        <MissingTemplateParam>
+            <errorLevel type="suppress">
+                <directory name="src/Handler"/>
+            </errorLevel>
+        </MissingTemplateParam>
     </issueHandlers>
-</psalm>
+<plugins><pluginClass class="Psalm\PhpUnitPlugin\Plugin"/></plugins></psalm>

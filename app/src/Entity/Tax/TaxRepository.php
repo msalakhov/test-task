@@ -9,7 +9,8 @@ use Doctrine\ORM\EntityNotFoundException;
 interface TaxRepository
 {
     /**
+     * @return numeric-string
      * @throws EntityNotFoundException
      */
-    public function getAmountByTaxNumber(string $taxNumber): string;
+    public function getAmountByCountryCode(string $countryCode): string;
 }

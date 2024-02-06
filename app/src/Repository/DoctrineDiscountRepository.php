@@ -20,6 +20,7 @@ class DoctrineDiscountRepository implements DiscountRepository
      */
     public function getByCouponCode(string $couponCode): Discount
     {
+        /** @var Discount | null $discount */
         $discount = $this
             ->entityManager
             ->getRepository(Discount::class)

@@ -23,6 +23,7 @@ class Discount
     #[Choice(choices: DiscountType::LIST, message: 'Choice a valid discount type')]
     private string $discountType;
 
+    /** @psalm-var numeric-string */
     #[ORM\Column(type: 'decimal', options: ['precision' => 5, 'scale' => 2])]
     private string $amount;
 
@@ -62,11 +63,17 @@ class Discount
         return $this;
     }
 
+    /**
+     * @psalm-return numeric-string
+     */
     public function getAmount(): string
     {
         return $this->amount;
     }
 
+    /**
+     * @psalm-param numeric-string $amount
+     */
     public function setAmount(string $amount): self
     {
         $this->amount = $amount;

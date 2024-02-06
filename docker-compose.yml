@@ -37,7 +37,9 @@ services:
     networks:
       - systemeio-net
   postgres:
-    image: postgres:15
+    build:
+      context: ./docker/postgres
+      dockerfile: Dockerfile
     volumes:
       - systemeio-pgsql:/var/lib/postgresql/data
     environment:

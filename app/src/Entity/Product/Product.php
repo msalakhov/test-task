@@ -17,6 +17,7 @@ class Product
     #[ORM\Column(type: 'string')]
     private string $name;
 
+    /** @var numeric-string $price */
     #[ORM\Column(type: 'decimal', options: ['precision' => 8, 'scale' => 2])]
     private string $price;
 
@@ -44,11 +45,17 @@ class Product
         return $this;
     }
 
+    /**
+     * @return numeric-string
+     */
     public function getPrice(): string
     {
         return $this->price;
     }
 
+    /**
+     * @param numeric-string $price
+     */
     public function setPrice(string $price): self
     {
         $this->price = $price;

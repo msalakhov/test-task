@@ -4,7 +4,7 @@ ADD conf.d /usr/local/etc/php/conf.d
 RUN apt-get update && apt-get install -qqy wget libpq-dev unzip && \
     pecl install xdebug && \
     docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql && \
-    docker-php-ext-install pdo_pgsql pgsql && \
+    docker-php-ext-install pdo_pgsql pgsql bcmath && \
     docker-php-ext-enable xdebug && \
     mkdir /home/www-data && \
     chmod 0777 /home/www-data && \

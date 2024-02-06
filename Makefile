@@ -8,7 +8,7 @@ stan:
 psalm:
 	docker-compose exec php-cli vendor/bin/psalm
 
-refresh: drop-database create-database migrate fixtures
+refresh: drop-database drop-database-test create-database create-database-test migrate migrate-test fixtures
 drop-database:
 	docker-compose exec php-cli php bin/console doctrine:database:drop --if-exists --force --no-interaction
 create-database:
@@ -19,3 +19,9 @@ migrate:
 	docker-compose exec php-cli php bin/console doctrine:migrations:migrate --no-interaction
 fixtures:
 	docker-compose exec php-cli php bin/console doctrine:fixtures:load --no-interaction -v
+drop-database-test:
+	docker-compose exec php-cli php bin/console doctrine:database:drop --if-exists --env=test --force --no-interaction
+create-database-test:
+	docker-compose exec php-cli php bin/console doctrine:database:create --no-interaction --env=test
+migrate-test:
+	docker-compose exec php-cli php bin/console doctrine:migration:migrate --env=test --no-interaction

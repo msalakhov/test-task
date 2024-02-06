@@ -6,7 +6,6 @@ namespace App\Repository;
 
 use App\Entity\Tax\Tax;
 use App\Entity\Tax\TaxRepository;
-use App\Service\TaxService;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityNotFoundException;
 
@@ -14,27 +13,27 @@ class DoctrineTaxRepository implements TaxRepository
 {
     public function __construct(
         private EntityManagerInterface $entityManager,
-        private TaxService $taxService
     ) {
     }
 
     /**
      * @inheritDoc
      */
-    public function getAmountByTaxNumber(string $taxNumber): string
+    public function getAmountByCountryCode(string $countryCode): string
     {
+        /** @var array<string, numeric-string> | null $amount */
         $amount = $this
             ->entityManager
             ->getRepository(Tax::class)
             ->createQueryBuilder('t')
             ->select('t.amount')
             ->where('t.countryCode=:countryCode')
-            ->setParameter('countryCode', $this->taxService->getCountryCodeFromTaxNumber($taxNumber))
+            ->setParameter('countryCode', $countryCode)
             ->getQuery()
             ->getOneOrNullResult();
 
         if ($amount === null) {
-            throw new EntityNotFoundException(sprintf('There is no tax which fits tax number: %s', $taxNumber));
+            throw new EntityNotFoundException(sprintf('There is no tax for country code: %s', $countryCode));
         }
 
         return $amount['amount'];

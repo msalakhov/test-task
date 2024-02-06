@@ -19,6 +19,8 @@ class DiscountFixtures extends Fixture
         $faker = Factory::create();
 
         for ($i = 1; $i <= self::ITEMS_TO_CREATE; $i++) {
+            /** @var numeric-string $amount */
+            $amount = (string) $faker->numberBetween(min: 10, max: 90);
             $discount = (new Discount())
                 ->setCode(
                     strtoupper(
@@ -30,7 +32,7 @@ class DiscountFixtures extends Fixture
                     )
                 )
                 ->setDiscountType($faker->randomElement(DiscountType::LIST))
-                ->setAmount((string) $faker->numberBetween(min: 10, max: 90));
+                ->setAmount($amount);
 
             print_r('generated coupon ' . $discount->getCode() . "\n");
 

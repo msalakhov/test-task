@@ -8,6 +8,7 @@ final class PaymentService
     {
     }
 
+    /** @param numeric-string $amount */
     public function pay(string $amount, ?string $paymentProcessor): bool
     {
         return $this->paymentProcessorFabric->getPaymentProcessor($paymentProcessor)->pay($amount);

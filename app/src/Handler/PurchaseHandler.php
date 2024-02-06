@@ -18,7 +18,6 @@ final class PurchaseHandler implements ProcessorInterface
 
     /**
      * @param PurchaseDto $data
-     * @return bool
      */
     public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = [])
     {
